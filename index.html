@@ -18,14 +18,19 @@
   --line:#e6e9f0;
   --bg:#f6f7fb;
   --card:#ffffff;
+
   --green:#158a53;
   --green-bg:#e5f8ee;
+
   --amber:#a4590b;
   --amber-bg:#fef1dc;
+
   --red:#c23a3a;
   --red-bg:#fdeaea;
+
   --blue:#2454c7;
   --blue-bg:#eaf2ff;
+
   --shadow:0 8px 24px rgba(22,28,43,.06);
 }
 
@@ -51,7 +56,8 @@ h1,h2,h3{
 }
 
 button,
-input{
+input,
+select{
   font:inherit;
 }
 
@@ -69,9 +75,10 @@ button{
   outline-offset:2px;
 }
 
-/* =========================
+
+/* =====================================================
    HEADER
-========================= */
+===================================================== */
 
 .site-header{
   position:sticky;
@@ -85,6 +92,7 @@ button{
   max-width:1120px;
   margin:0 auto;
   padding:16px 20px;
+
   display:flex;
   align-items:center;
   justify-content:space-between;
@@ -102,10 +110,13 @@ button{
   width:40px;
   height:40px;
   flex:none;
+
   display:grid;
   place-items:center;
+
   border-radius:12px;
   background:var(--orange-soft);
+
   font-size:20px;
 }
 
@@ -133,7 +144,10 @@ button{
   white-space:nowrap;
 }
 
-/* SEARCH */
+
+/* =====================================================
+   SEARCH
+===================================================== */
 
 .search-bar{
   background:#fff;
@@ -153,54 +167,79 @@ button{
 
 .search input{
   width:100%;
+
   border:1px solid var(--line);
   border-radius:11px;
+
   background:var(--bg);
+
   padding:12px 14px 12px 40px;
+
   outline:none;
+
   transition:.15s;
 }
 
 .search input:focus{
   border-color:var(--orange);
   background:#fff;
-  box-shadow:0 0 0 3px var(--orange-soft);
+
+  box-shadow:
+    0 0 0 3px var(--orange-soft);
 }
 
 .search:before{
   content:"";
+
   position:absolute;
+
   left:13px;
   top:50%;
+
   width:14px;
   height:14px;
+
   transform:translateY(-50%);
+
   border:2px solid var(--muted);
   border-radius:50%;
+
   box-sizing:border-box;
 }
 
 .search:after{
   content:"";
+
   position:absolute;
+
   left:25px;
   top:calc(50% + 6px);
+
   width:7px;
   height:2px;
+
   background:var(--muted);
+
   transform:rotate(45deg);
 }
 
-/* =========================
+
+/* =====================================================
    BUTTONS
-========================= */
+===================================================== */
 
 button.btn{
   padding:10px 15px;
+
   border-radius:10px;
+
   font-weight:700;
   font-size:13px;
-  transition:transform .12s,background .12s,box-shadow .12s;
+
+  transition:
+    transform .12s,
+    background .12s,
+    box-shadow .12s;
 }
 
 .btn:hover{
@@ -218,7 +257,9 @@ button.btn{
 
 .btn-outline{
   background:transparent;
+
   border:1px solid var(--line);
+
   color:var(--ink);
 }
 
@@ -226,13 +267,15 @@ button.btn{
   background:var(--bg);
 }
 
-/* =========================
+
+/* =====================================================
    MAIN
-========================= */
+===================================================== */
 
 main{
   max-width:1120px;
   margin:0 auto;
+
   padding:26px 20px 56px;
 }
 
@@ -247,38 +290,53 @@ main{
 
 .hero p{
   margin:6px 0 0;
+
   color:var(--muted);
+
   font-size:14px;
 }
 
-/* =========================
+
+/* =====================================================
    STATS
-========================= */
+===================================================== */
 
 .stats{
   display:grid;
-  grid-template-columns:repeat(4,1fr);
+
+  grid-template-columns:
+    repeat(4,1fr);
+
   gap:12px;
+
   margin-bottom:20px;
 }
 
 .stat{
   background:var(--card);
+
   border:1px solid var(--line);
+
   border-radius:14px;
+
   padding:16px;
 }
 
 .stat-label{
   color:var(--muted);
+
   font-size:12px;
+
   font-weight:600;
 }
 
 .stat-value{
   font-family:"Space Grotesk",sans-serif;
+
   font-weight:700;
+
   font-size:23px;
+
   margin-top:6px;
 }
 
@@ -290,15 +348,20 @@ main{
   color:var(--green);
 }
 
-/* =========================
+
+/* =====================================================
    CARDS
-========================= */
+===================================================== */
 
 .card{
   background:#fff;
+
   border:1px solid var(--line);
+
   border-radius:16px;
+
   box-shadow:var(--shadow);
+
   overflow:hidden;
 }
 
@@ -308,11 +371,17 @@ main{
 
 .card-head{
   padding:16px 20px;
+
   border-bottom:1px solid var(--line);
+
   display:flex;
+
   justify-content:space-between;
+
   align-items:center;
+
   gap:12px;
+
   flex-wrap:wrap;
 }
 
@@ -322,37 +391,107 @@ main{
 
 .card-head .sub-label{
   display:block;
+
   font-size:12px;
+
   color:var(--muted);
+
   margin-top:2px;
 }
 
 .card-head .count{
   font-size:12px;
+
   color:var(--muted);
 }
 
-/* =========================
-   ADMIN SECTION
-========================= */
 
-/*
-  IMPORTANT:
-  Admin is now BEFORE Public View.
-*/
+/* =====================================================
+   FILTER AREA
+===================================================== */
+
+.filter-area{
+  padding:12px 20px;
+
+  background:#fbfcfe;
+
+  border-bottom:1px solid var(--line);
+
+  display:flex;
+
+  align-items:center;
+
+  gap:8px;
+
+  flex-wrap:wrap;
+}
+
+.filter-label{
+  color:var(--muted);
+
+  font-size:12px;
+
+  font-weight:700;
+
+  margin-right:3px;
+}
+
+.filter-btn{
+  border:1px solid var(--line);
+
+  background:#fff;
+
+  color:var(--ink);
+
+  padding:7px 12px;
+
+  border-radius:20px;
+
+  font-size:11px;
+
+  font-weight:700;
+
+  transition:.15s;
+}
+
+.filter-btn:hover{
+  border-color:#d4d8e2;
+
+  background:var(--bg);
+}
+
+.filter-btn.active{
+  background:var(--orange);
+
+  border-color:var(--orange);
+
+  color:#fff;
+}
+
+
+/* =====================================================
+   ADMIN
+===================================================== */
 
 #admin-view{
   margin-top:0;
+
   margin-bottom:24px;
 }
 
 .admin-banner{
   background:var(--orange-soft);
+
   border:1px solid #fdd8ae;
+
   border-radius:12px;
+
   padding:13px 16px;
+
   margin-bottom:16px;
+
   color:#8a4109;
+
   font-size:13px;
 }
 
@@ -360,27 +499,35 @@ main{
   overflow:hidden;
 }
 
-/* ADMIN DESKTOP TABLE */
-
 .admin-table{
   width:100%;
+
   border-collapse:collapse;
 }
 
 .admin-table th{
   text-align:left;
+
   color:var(--muted);
+
   font-size:12px;
+
   font-weight:600;
+
   padding:12px 16px;
+
   background:#fbfcfe;
+
   white-space:nowrap;
 }
 
 .admin-table td{
   padding:13px 16px;
+
   border-top:1px solid #eef0f5;
+
   font-size:13px;
+
   vertical-align:middle;
 }
 
@@ -390,17 +537,25 @@ main{
 
 .admin-actions{
   display:flex;
+
   align-items:center;
+
   justify-content:flex-start;
+
   gap:7px;
+
   white-space:nowrap;
 }
 
 .icon-btn{
   border-radius:8px;
+
   padding:8px 11px;
+
   font-size:12px;
+
   font-weight:700;
+
   transition:.15s;
 }
 
@@ -410,6 +565,7 @@ main{
 
 .icon-btn.edit{
   background:var(--blue-bg);
+
   color:var(--blue);
 }
 
@@ -419,6 +575,7 @@ main{
 
 .icon-btn.delete{
   background:var(--red-bg);
+
   color:var(--red);
 }
 
@@ -426,9 +583,10 @@ main{
   background:#fbdada;
 }
 
-/* =========================
-   MOBILE ADMIN CARDS
-========================= */
+
+/* =====================================================
+   MOBILE ADMIN
+===================================================== */
 
 .admin-mobile-list{
   display:none;
@@ -436,67 +594,94 @@ main{
 
 .admin-mobile-card{
   padding:15px 16px;
+
   border-top:1px solid #eef0f5;
 }
 
 .admin-mobile-top{
   display:flex;
+
   align-items:flex-start;
+
   justify-content:space-between;
+
   gap:12px;
 }
 
 .admin-mobile-name{
   font-weight:800;
+
   font-size:15px;
+
   line-height:1.3;
 }
 
 .admin-mobile-details{
   margin-top:12px;
+
   display:grid;
-  grid-template-columns:1fr 1fr;
+
+  grid-template-columns:
+    1fr 1fr;
+
   gap:8px;
 }
 
 .admin-detail{
   background:var(--bg);
+
   border-radius:9px;
+
   padding:9px 10px;
 }
 
 .admin-detail-label{
   display:block;
+
   color:var(--muted);
+
   font-size:10px;
+
   font-weight:700;
+
   text-transform:uppercase;
+
   letter-spacing:.3px;
+
   margin-bottom:2px;
 }
 
 .admin-detail-value{
   font-size:13px;
+
   font-weight:700;
 }
 
 .admin-mobile-actions{
   display:grid;
-  grid-template-columns:1fr 1fr;
+
+  grid-template-columns:
+    1fr 1fr;
+
   gap:8px;
+
   margin-top:13px;
 }
 
 .admin-mobile-actions button{
   padding:10px;
+
   border-radius:9px;
+
   font-size:12px;
+
   font-weight:800;
 }
 
-/* =========================
+
+/* =====================================================
    PUBLIC TABLE
-========================= */
+===================================================== */
 
 .public-card{
   margin-top:0;
@@ -504,22 +689,31 @@ main{
 
 table{
   width:100%;
+
   border-collapse:collapse;
 }
 
 th{
   text-align:left;
+
   color:var(--muted);
+
   font-size:12px;
+
   font-weight:600;
+
   padding:12px 20px;
+
   background:#fbfcfe;
 }
 
 td{
   padding:14px 20px;
+
   border-top:1px solid #eef0f5;
+
   font-size:14px;
+
   vertical-align:middle;
 }
 
@@ -529,7 +723,9 @@ td{
 
 .sub{
   font-size:12px;
+
   color:var(--muted);
+
   margin-top:2px;
 }
 
@@ -539,64 +735,95 @@ td{
 
 .balance{
   color:var(--red);
+
   font-weight:700;
 }
 
 .badge{
   display:inline-flex;
+
   align-items:center;
+
   gap:5px;
+
   padding:5px 10px;
+
   border-radius:20px;
+
   font-size:11px;
+
   font-weight:700;
+
   white-space:nowrap;
 }
 
 .badge.paid{
   color:var(--green);
+
   background:var(--green-bg);
 }
 
 .badge.partial{
   color:var(--amber);
+
   background:var(--amber-bg);
 }
 
 .badge.unpaid{
   color:var(--red);
+
   background:var(--red-bg);
 }
 
 .empty{
   text-align:center;
+
   padding:46px 20px;
+
   color:var(--muted);
+
   font-size:14px;
 }
 
-/* =========================
+
+/* =====================================================
    MODALS
-========================= */
+===================================================== */
 
 .modal-backdrop{
   position:fixed;
+
   inset:0;
+
   background:rgba(15,20,32,.55);
+
   backdrop-filter:blur(4px);
+
   display:grid;
+
   place-items:center;
+
   padding:18px;
+
   z-index:100;
 }
 
 .modal{
   width:min(100%,500px);
+
   background:#fff;
+
   border-radius:18px;
+
   padding:22px;
-  box-shadow:0 25px 70px rgba(15,20,32,.35);
-  max-height:calc(100vh - 30px);
+
+  box-shadow:
+    0 25px 70px
+    rgba(15,20,32,.35);
+
+  max-height:
+    calc(100vh - 30px);
+
   overflow:auto;
 }
 
@@ -606,13 +833,18 @@ td{
 
 .modal > p{
   margin:5px 0 18px;
+
   color:var(--muted);
+
   font-size:13px;
 }
 
 .fields{
   display:grid;
-  grid-template-columns:1fr 1fr;
+
+  grid-template-columns:
+    1fr 1fr;
+
   gap:12px;
 }
 
@@ -622,68 +854,106 @@ td{
 
 .field label{
   display:block;
+
   font-size:12px;
+
   font-weight:700;
+
   color:#4c5670;
+
   margin:0 0 6px;
 }
 
 .field input{
   width:100%;
+
   border:1px solid var(--line);
+
   border-radius:10px;
+
   padding:11px 12px;
+
   outline:none;
+
   background:var(--bg);
 }
 
 .field input:focus{
   border-color:var(--orange);
+
   background:#fff;
-  box-shadow:0 0 0 3px var(--orange-soft);
+
+  box-shadow:
+    0 0 0 3px
+    var(--orange-soft);
 }
 
 .modal-actions{
   display:flex;
+
   justify-content:flex-end;
+
   gap:10px;
+
   margin-top:20px;
 }
 
 .notice{
   font-size:12px;
+
   color:var(--muted);
+
   background:var(--bg);
+
   padding:10px 12px;
+
   border-radius:9px;
+
   margin-top:14px;
+
   line-height:1.5;
 }
 
-/* =========================
+
+/* =====================================================
    TOAST
-========================= */
+===================================================== */
 
 .toast{
   position:fixed;
+
   top:16px;
+
   left:50%;
+
   transform:translateX(-50%);
+
   z-index:200;
+
   padding:11px 18px;
+
   background:var(--ink);
+
   color:#fff;
+
   border-radius:10px;
+
   font-weight:600;
+
   font-size:13px;
+
   box-shadow:var(--shadow);
-  max-width:calc(100% - 30px);
+
+  max-width:
+    calc(100% - 30px);
+
   text-align:center;
 }
 
-/* =========================
+
+/* =====================================================
    MOBILE
-========================= */
+===================================================== */
 
 @media(max-width:720px){
 
@@ -693,8 +963,11 @@ td{
 
   .brand-mark{
     width:36px;
+
     height:36px;
+
     border-radius:10px;
+
     font-size:17px;
   }
 
@@ -716,6 +989,7 @@ td{
 
   .header-actions .btn{
     padding:8px 10px;
+
     font-size:11px;
   }
 
@@ -736,18 +1010,23 @@ td{
   }
 
   .stats{
-    grid-template-columns:1fr 1fr;
+    grid-template-columns:
+      1fr 1fr;
+
     gap:9px;
+
     margin-bottom:16px;
   }
 
   .stat{
     padding:12px;
+
     border-radius:12px;
   }
 
   .stat-value{
     font-size:19px;
+
     margin-top:5px;
   }
 
@@ -767,10 +1046,39 @@ td{
     width:100%;
   }
 
+
+  /* FILTER */
+
+  .filter-area{
+    padding:11px 14px;
+
+    gap:6px;
+  }
+
+  .filter-label{
+    width:100%;
+
+    margin-bottom:2px;
+  }
+
+  .filter-btn{
+    flex:1;
+
+    min-width:0;
+
+    padding:8px 5px;
+
+    text-align:center;
+
+    font-size:10px;
+  }
+
+
   /* ADMIN */
 
   .admin-banner{
     font-size:12px;
+
     line-height:1.45;
   }
 
@@ -791,8 +1099,10 @@ td{
   }
 
   .admin-mobile-details{
-    grid-template-columns:1fr 1fr;
+    grid-template-columns:
+      1fr 1fr;
   }
+
 
   /* PUBLIC */
 
@@ -800,6 +1110,7 @@ td{
   #publicRows tr,
   #publicRows td{
     display:block;
+
     width:100%;
   }
 
@@ -813,13 +1124,17 @@ td{
 
   #publicRows tr{
     position:relative;
+
     padding:14px 16px 11px;
+
     border-top:1px solid #eef0f5;
   }
 
   #publicRows td{
     border:0;
+
     padding:0;
+
     margin:0 0 8px;
   }
 
@@ -829,21 +1144,29 @@ td{
 
   #publicRows td:not(:first-child){
     display:flex;
+
     align-items:center;
+
     justify-content:space-between;
+
     font-size:13px;
+
     gap:10px;
   }
 
   #publicRows td:not(:first-child):before{
     content:attr(data-label);
+
     color:var(--muted);
+
     font-size:11px;
+
     font-weight:600;
   }
 
   .badge{
     font-size:10px;
+
     padding:5px 9px;
   }
 
@@ -851,10 +1174,12 @@ td{
     font-size:11px;
   }
 
+
   /* MODAL */
 
   .fields{
-    grid-template-columns:1fr;
+    grid-template-columns:
+      1fr;
   }
 
   .field.full{
@@ -863,32 +1188,43 @@ td{
 
   .modal{
     padding:18px;
+
     border-radius:16px;
   }
 
   .modal-actions{
     position:sticky;
+
     bottom:-18px;
+
     background:#fff;
+
     padding:12px 0 0;
+
     margin-top:16px;
   }
 
   .modal-actions .btn{
     flex:1;
   }
+
 }
 
-/* VERY SMALL PHONES */
+
+/* =====================================================
+   VERY SMALL PHONES
+===================================================== */
 
 @media(max-width:400px){
 
   .admin-mobile-details{
-    grid-template-columns:1fr;
+    grid-template-columns:
+      1fr;
   }
 
   .admin-mobile-actions{
-    grid-template-columns:1fr 1fr;
+    grid-template-columns:
+      1fr 1fr;
   }
 
   .brand-mark{
@@ -898,15 +1234,17 @@ td{
   .brand{
     gap:0;
   }
+
 }
 </style>
 </head>
 
 <body>
 
-<!-- =========================
+
+<!-- =====================================================
      HEADER
-========================= -->
+===================================================== -->
 
 <header class="site-header">
 
@@ -914,32 +1252,56 @@ td{
 
     <div class="brand">
 
-      <div class="brand-mark">👕</div>
+      <div class="brand-mark">
+        👕
+      </div>
 
       <div class="brand-text">
-        <h1>BSCS - 1A</h1>
-        <p>barayad na kamo sa HACKATHON!!</p>
+
+        <h1>
+          BSCS - 1A
+        </h1>
+
+        <p>
+          barayad na kamo sa HACKATHON!!
+        </p>
+
       </div>
 
     </div>
 
+
     <div class="header-actions">
 
-      <span class="role" id="role">
+      <span
+        class="role"
+        id="role"
+      >
         Public view
       </span>
 
-      <button id="loginBtn" class="btn btn-outline">
+
+      <button
+        id="loginBtn"
+        class="btn btn-outline"
+      >
         Admin login
       </button>
 
-      <button id="logoutBtn" class="btn btn-outline hidden">
+
+      <button
+        id="logoutBtn"
+        class="btn btn-outline hidden"
+      >
         Log out
       </button>
 
     </div>
 
   </div>
+
+
+  <!-- SEARCH -->
 
   <div class="search-bar">
 
@@ -963,11 +1325,12 @@ td{
 </header>
 
 
-<!-- =========================
+<!-- =====================================================
      MAIN
-========================= -->
+===================================================== -->
 
 <main>
+
 
   <section class="hero">
 
@@ -983,9 +1346,9 @@ td{
   </section>
 
 
-  <!-- =========================
-       STATISTICS
-  ========================= -->
+  <!-- ===================================================
+       STATS
+  ==================================================== -->
 
   <section class="stats">
 
@@ -1055,11 +1418,11 @@ td{
   </section>
 
 
-  <!-- =====================================================
+  <!-- ===================================================
        ADMIN VIEW
        
-       MOVED ABOVE PUBLIC VIEW
-  ====================================================== -->
+       ADMIN IS ABOVE PUBLIC VIEW
+  ==================================================== -->
 
   <section
     id="admin-view"
@@ -1068,13 +1431,18 @@ td{
 
     <div class="admin-banner">
 
-      <strong>Admin dashboard</strong> —
+      <strong>
+        Admin dashboard
+      </strong>
+
+      —
       changes here appear in the public payment list right away.
 
     </div>
 
 
     <div class="card admin-card">
+
 
       <div class="card-head">
 
@@ -1101,6 +1469,49 @@ td{
       </div>
 
 
+      <!-- ADMIN FILTER -->
+
+      <div class="filter-area">
+
+        <span class="filter-label">
+          Payment status:
+        </span>
+
+
+        <button
+          class="filter-btn admin-filter active"
+          data-filter="all"
+        >
+          All
+        </button>
+
+
+        <button
+          class="filter-btn admin-filter"
+          data-filter="paid"
+        >
+          Paid
+        </button>
+
+
+        <button
+          class="filter-btn admin-filter"
+          data-filter="partial"
+        >
+          Partial payment
+        </button>
+
+
+        <button
+          class="filter-btn admin-filter"
+          data-filter="unpaid"
+        >
+          No payment
+        </button>
+
+      </div>
+
+
       <!-- DESKTOP ADMIN TABLE -->
 
       <table class="admin-table">
@@ -1109,25 +1520,51 @@ td{
 
           <tr>
 
-            <th>Student</th>
-            <th>Group</th>
-            <th>Codename</th>
-            <th>Size</th>
-            <th>Price</th>
-            <th>Paid</th>
-            <th>Balance</th>
-            <th>Actions</th>
+            <th>
+              Student
+            </th>
+
+            <th>
+              Group
+            </th>
+
+            <th>
+              Codename
+            </th>
+
+            <th>
+              Size
+            </th>
+
+            <th>
+              Price
+            </th>
+
+            <th>
+              Paid
+            </th>
+
+            <th>
+              Balance
+            </th>
+
+            <th>
+              Actions
+            </th>
 
           </tr>
 
         </thead>
 
-        <tbody id="adminRows"></tbody>
+
+        <tbody
+          id="adminRows"
+        ></tbody>
 
       </table>
 
 
-      <!-- MOBILE ADMIN CARDS -->
+      <!-- MOBILE ADMIN -->
 
       <div
         id="adminMobileRows"
@@ -1139,7 +1576,7 @@ td{
         class="empty hidden"
         id="adminEmpty"
       >
-        No records yet — add your first payment record above.
+        No records match your selected filter.
       </div>
 
     </div>
@@ -1147,11 +1584,9 @@ td{
   </section>
 
 
-  <!-- =====================================================
+  <!-- ===================================================
        PUBLIC VIEW
-       
-       NOW BELOW ADMIN
-  ====================================================== -->
+  ==================================================== -->
 
   <section
     class="card public-card"
@@ -1172,10 +1607,54 @@ td{
 
       </div>
 
+
       <span
         class="count"
         id="resultCount"
       ></span>
+
+    </div>
+
+
+    <!-- PUBLIC FILTER -->
+
+    <div class="filter-area">
+
+      <span class="filter-label">
+        Payment status:
+      </span>
+
+
+      <button
+        class="filter-btn public-filter active"
+        data-filter="all"
+      >
+        All
+      </button>
+
+
+      <button
+        class="filter-btn public-filter"
+        data-filter="paid"
+      >
+        Paid
+      </button>
+
+
+      <button
+        class="filter-btn public-filter"
+        data-filter="partial"
+      >
+        Partial payment
+      </button>
+
+
+      <button
+        class="filter-btn public-filter"
+        data-filter="unpaid"
+      >
+        No payment
+      </button>
 
     </div>
 
@@ -1186,19 +1665,38 @@ td{
 
         <tr>
 
-          <th>Student</th>
-          <th>Group / codename / size</th>
-          <th>T-shirt price</th>
-          <th>Paid</th>
-          <th>Balance</th>
-          <th>Status</th>
+          <th>
+            Student
+          </th>
+
+          <th>
+            Group / codename / size
+          </th>
+
+          <th>
+            T-shirt price
+          </th>
+
+          <th>
+            Paid
+          </th>
+
+          <th>
+            Balance
+          </th>
+
+          <th>
+            Status
+          </th>
 
         </tr>
 
       </thead>
 
 
-      <tbody id="publicRows"></tbody>
+      <tbody
+        id="publicRows"
+      ></tbody>
 
     </table>
 
@@ -1207,7 +1705,7 @@ td{
       class="empty hidden"
       id="publicEmpty"
     >
-      No payment records match your search.
+      No payment records match your search or filter.
     </div>
 
   </section>
@@ -1217,7 +1715,7 @@ td{
 
 <!-- =====================================================
      LOGIN MODAL
-====================================================== -->
+===================================================== -->
 
 <div
   id="loginModal"
@@ -1279,6 +1777,7 @@ td{
         Cancel
       </button>
 
+
       <button
         class="btn btn-primary"
         id="loginSubmit"
@@ -1294,8 +1793,8 @@ td{
 
 
 <!-- =====================================================
-     ADD / EDIT RECORD MODAL
-====================================================== -->
+     ADD / EDIT MODAL
+===================================================== -->
 
 <div
   id="recordModal"
@@ -1423,6 +1922,7 @@ td{
         Cancel
       </button>
 
+
       <button
         class="btn btn-primary"
         id="saveRecord"
@@ -1437,7 +1937,9 @@ td{
 </div>
 
 
-<!-- TOAST -->
+<!-- =====================================================
+     TOAST
+===================================================== -->
 
 <div
   id="toast"
@@ -1447,7 +1949,7 @@ td{
 
 <!-- =====================================================
      FIREBASE
-====================================================== -->
+===================================================== -->
 
 <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
 
@@ -1460,29 +1962,36 @@ td{
 
 /* =====================================================
    FIREBASE CONFIG
-   LEFT EXACTLY AS PROVIDED
 ===================================================== */
 
 firebase.initializeApp({
 
-  apiKey: "AIzaSyCtXBrH_48U34jw_KrbAZSCpXTY2qfSqEg",
+  apiKey:
+    "AIzaSyCtXBrH_48U34jw_KrbAZSCpXTY2qfSqEg",
 
-  authDomain: "areyouatecha.firebaseapp.com",
+  authDomain:
+    "areyouatecha.firebaseapp.com",
 
-  projectId: "areyouatecha",
+  projectId:
+    "areyouatecha",
 
-  storageBucket: "areyouatecha.firebasestorage.app",
+  storageBucket:
+    "areyouatecha.firebasestorage.app",
 
-  messagingSenderId: "628406103719",
+  messagingSenderId:
+    "628406103719",
 
-  appId: "1:628406103719:web:6d1f336ee0a79e877f3582"
+  appId:
+    "1:628406103719:web:6d1f336ee0a79e877f3582"
 
 });
 
 
-const auth = firebase.auth();
+const auth =
+  firebase.auth();
 
-const db = firebase.firestore();
+const db =
+  firebase.firestore();
 
 
 /* =====================================================
@@ -1496,22 +2005,34 @@ let editingId = null;
 let toastTimer = null;
 
 
+/*
+  Separate filters for Public and Admin.
+*/
+
+let publicFilter = 'all';
+
+let adminFilter = 'all';
+
+
 /* =====================================================
-   HELPER
+   HELPERS
 ===================================================== */
 
-const $ = id => document.getElementById(id);
+const $ =
+  id =>
+    document.getElementById(id);
 
 
-const money = n =>
-  '₱' +
-  Number(n || 0).toLocaleString(
-    'en-PH',
-    {
-      minimumFractionDigits:0,
-      maximumFractionDigits:2
-    }
-  );
+const money =
+  n =>
+    '₱' +
+    Number(n || 0).toLocaleString(
+      'en-PH',
+      {
+        minimumFractionDigits:0,
+        maximumFractionDigits:2
+      }
+    );
 
 
 /* =====================================================
@@ -1523,13 +2044,14 @@ function esc(v){
   return String(v ?? '')
     .replace(
       /[&<>"']/g,
-      c => ({
-        '&':'&amp;',
-        '<':'&lt;',
-        '>':'&gt;',
-        '"':'&quot;',
-        "'":'&#39;'
-      }[c])
+      c =>
+        ({
+          '&':'&amp;',
+          '<':'&lt;',
+          '>':'&gt;',
+          '"':'&quot;',
+          "'":'&#39;'
+        }[c])
     );
 
 }
@@ -1544,11 +2066,13 @@ function paymentState(r){
   const price =
     Number(r.price) || 0;
 
+
   const paid =
     Math.min(
       Number(r.paid) || 0,
       price
     );
+
 
   const balance =
     Math.max(
@@ -1556,14 +2080,21 @@ function paymentState(r){
       price - paid
     );
 
+
   let status;
 
-  if(balance === 0 && price > 0){
+
+  if(
+    balance === 0 &&
+    price > 0
+  ){
 
     status = 'Paid';
 
   }
-  else if(paid > 0){
+  else if(
+    paid > 0
+  ){
 
     status = 'Partial';
 
@@ -1574,12 +2105,63 @@ function paymentState(r){
 
   }
 
+
   return {
     price,
     paid,
     balance,
     status
   };
+
+}
+
+
+/* =====================================================
+   FILTER MATCH
+===================================================== */
+
+function matchesPaymentFilter(
+  record,
+  filter
+){
+
+  if(filter === 'all'){
+    return true;
+  }
+
+
+  const status =
+    paymentState(record).status;
+
+
+  if(
+    filter === 'paid'
+  ){
+
+    return status === 'Paid';
+
+  }
+
+
+  if(
+    filter === 'partial'
+  ){
+
+    return status === 'Partial';
+
+  }
+
+
+  if(
+    filter === 'unpaid'
+  ){
+
+    return status === 'Unpaid';
+
+  }
+
+
+  return true;
 
 }
 
@@ -1614,7 +2196,7 @@ function statusBadge(status){
 
   return `
     <span class="badge unpaid">
-      ! Not paid
+      ! No payment
     </span>
   `;
 
@@ -1622,49 +2204,87 @@ function statusBadge(status){
 
 
 /* =====================================================
-   RENDER EVERYTHING
+   RENDER
 ===================================================== */
 
 function render(){
 
   const q =
-    $('search').value
+    $('search')
+      .value
       .trim()
       .toLowerCase();
 
 
-  const matchesSearch = r => {
+  /* ===================================================
+     SEARCH MATCH
+  =================================================== */
 
-    if(!q) return true;
+  const matchesSearch =
+    r => {
 
-    return [
-      r.name,
-      r.group,
-      r.codename,
-      r.size
-    ]
-    .some(
-      v =>
-        String(v || '')
-          .toLowerCase()
-          .includes(q)
+      if(!q){
+        return true;
+      }
+
+
+      return [
+
+        r.name,
+        r.group,
+        r.codename,
+        r.size
+
+      ]
+      .some(
+        v =>
+          String(v || '')
+            .toLowerCase()
+            .includes(q)
+      );
+
+    };
+
+
+  /* ===================================================
+     PUBLIC RECORDS
+  =================================================== */
+
+  const publicVisible =
+    records.filter(
+      r =>
+        matchesSearch(r) &&
+        matchesPaymentFilter(
+          r,
+          publicFilter
+        )
     );
 
-  };
+
+  /* ===================================================
+     ADMIN RECORDS
+  =================================================== */
+
+  const adminVisible =
+    records.filter(
+      r =>
+        matchesSearch(r) &&
+        matchesPaymentFilter(
+          r,
+          adminFilter
+        )
+    );
 
 
-  const visible =
-    records.filter(matchesSearch);
-
-
-  /* =========================
+  /* ===================================================
      STATISTICS
-  ========================= */
+  =================================================== */
 
   const paidCount =
     records.filter(
       r =>
-        paymentState(r).status === 'Paid'
+        paymentState(r).status ===
+        'Paid'
     ).length;
 
 
@@ -1678,7 +2298,8 @@ function render(){
   const collected =
     records.reduce(
       (sum,r) =>
-        sum + paymentState(r).paid,
+        sum +
+        paymentState(r).paid,
       0
     );
 
@@ -1699,339 +2320,443 @@ function render(){
     money(collected);
 
 
+  /* ===================================================
+     PUBLIC COUNT
+  =================================================== */
+
   $('resultCount').textContent =
-    visible.length +
+    publicVisible.length +
     ' record' +
-    (visible.length === 1 ? '' : 's');
+    (
+      publicVisible.length === 1
+        ? ''
+        : 's'
+    );
 
 
-  /* =========================
-     PUBLIC VIEW
-  ========================= */
+  /* ===================================================
+     PUBLIC TABLE
+  =================================================== */
 
   $('publicRows').innerHTML =
-    visible.map(r => {
+    publicVisible
+      .map(
+        r => {
 
-      const s =
-        paymentState(r);
-
-
-      const details = [
-
-        r.group
-          ? 'Group: ' + r.group
-          : '',
-
-        r.codename
-          ? 'Code: ' + r.codename
-          : '',
-
-        r.size
-          ? 'Size: ' + r.size
-          : ''
-
-      ]
-      .filter(Boolean)
-      .join(' · ');
+          const s =
+            paymentState(r);
 
 
-      return `
+          const details = [
 
-        <tr>
+            r.group
+              ? 'Group: ' + r.group
+              : '',
 
-          <td>
+            r.codename
+              ? 'Code: ' + r.codename
+              : '',
 
-            <div class="person">
-              ${esc(r.name)}
-            </div>
+            r.size
+              ? 'Size: ' + r.size
+              : ''
 
-            ${
-              details
-              ?
-              `<div class="sub">
-                ${esc(details)}
-              </div>`
-              :
-              ''
-            }
-
-          </td>
+          ]
+          .filter(Boolean)
+          .join(' · ');
 
 
-          <td
-            data-label="Group / code / size"
-            class="sub"
-          >
-            ${esc(details) || '—'}
-          </td>
+          return `
+
+            <tr>
+
+              <td>
+
+                <div class="person">
+                  ${esc(r.name)}
+                </div>
+
+                ${
+                  details
+                    ?
+                    `<div class="sub">
+                      ${esc(details)}
+                    </div>`
+                    :
+                    ''
+                }
+
+              </td>
 
 
-          <td
-            data-label="T-shirt price"
-            class="amount"
-          >
-            ${money(s.price)}
-          </td>
+              <td
+                data-label="Group / code / size"
+                class="sub"
+              >
+                ${esc(details) || '—'}
+              </td>
 
 
-          <td
-            data-label="Paid"
-            class="amount"
-          >
-            ${money(s.paid)}
-          </td>
+              <td
+                data-label="T-shirt price"
+                class="amount"
+              >
+                ${money(s.price)}
+              </td>
 
 
-          <td
-            data-label="Balance"
-            class="balance"
-          >
-            ${money(s.balance)}
-          </td>
+              <td
+                data-label="Paid"
+                class="amount"
+              >
+                ${money(s.paid)}
+              </td>
 
 
-          <td
-            data-label="Status"
-          >
-            ${statusBadge(s.status)}
-          </td>
+              <td
+                data-label="Balance"
+                class="balance"
+              >
+                ${money(s.balance)}
+              </td>
 
-        </tr>
 
-      `;
+              <td
+                data-label="Status"
+              >
+                ${statusBadge(s.status)}
+              </td>
 
-    })
-    .join('');
+            </tr>
+
+          `;
+
+        }
+      )
+      .join('');
 
 
   $('publicEmpty')
     .classList
     .toggle(
       'hidden',
-      visible.length > 0
+      publicVisible.length > 0
     );
 
 
-  /* =========================
+  /* ===================================================
      ADMIN DESKTOP TABLE
-  ========================= */
+  =================================================== */
 
   $('adminRows').innerHTML =
-    visible.map(r => {
+    adminVisible
+      .map(
+        r => {
 
-      const s =
-        paymentState(r);
-
-
-      return `
-
-        <tr>
-
-          <td class="person">
-            ${esc(r.name)}
-          </td>
-
-          <td>
-            ${esc(r.group) || '—'}
-          </td>
-
-          <td>
-            ${esc(r.codename) || '—'}
-          </td>
-
-          <td>
-            ${esc(r.size) || '—'}
-          </td>
-
-          <td>
-            ${money(s.price)}
-          </td>
-
-          <td>
-            ${money(s.paid)}
-          </td>
-
-          <td class="balance">
-            ${money(s.balance)}
-          </td>
+          const s =
+            paymentState(r);
 
 
-          <td>
+          return `
 
-            <div class="admin-actions">
+            <tr>
 
-              <button
-                class="icon-btn edit"
-                data-edit="${esc(r.id)}"
-              >
-                Edit
-              </button>
+              <td class="person">
+                ${esc(r.name)}
+              </td>
+
+              <td>
+                ${esc(r.group) || '—'}
+              </td>
+
+              <td>
+                ${esc(r.codename) || '—'}
+              </td>
+
+              <td>
+                ${esc(r.size) || '—'}
+              </td>
+
+              <td>
+                ${money(s.price)}
+              </td>
+
+              <td>
+                ${money(s.paid)}
+              </td>
+
+              <td class="balance">
+                ${money(s.balance)}
+              </td>
 
 
-              <button
-                class="icon-btn delete"
-                data-delete="${esc(r.id)}"
-              >
-                Delete
-              </button>
+              <td>
 
-            </div>
+                <div class="admin-actions">
 
-          </td>
-
-        </tr>
-
-      `;
-
-    })
-    .join('');
+                  <button
+                    class="icon-btn edit"
+                    data-edit="${esc(r.id)}"
+                  >
+                    Edit
+                  </button>
 
 
-  /* =========================
+                  <button
+                    class="icon-btn delete"
+                    data-delete="${esc(r.id)}"
+                  >
+                    Delete
+                  </button>
+
+                </div>
+
+              </td>
+
+            </tr>
+
+          `;
+
+        }
+      )
+      .join('');
+
+
+  /* ===================================================
      ADMIN MOBILE CARDS
-     
-     This is the important fix.
-     No horizontal scrolling.
-  ========================= */
+  =================================================== */
 
   $('adminMobileRows').innerHTML =
-    visible.map(r => {
+    adminVisible
+      .map(
+        r => {
 
-      const s =
-        paymentState(r);
-
-
-      return `
-
-        <div class="admin-mobile-card">
-
-          <div class="admin-mobile-top">
-
-            <div class="admin-mobile-name">
-              ${esc(r.name)}
-            </div>
-
-            ${statusBadge(s.status)}
-
-          </div>
+          const s =
+            paymentState(r);
 
 
-          <div class="admin-mobile-details">
+          return `
 
-            <div class="admin-detail">
-
-              <span class="admin-detail-label">
-                Group
-              </span>
-
-              <span class="admin-detail-value">
-                ${esc(r.group) || '—'}
-              </span>
-
-            </div>
-
-
-            <div class="admin-detail">
-
-              <span class="admin-detail-label">
-                Codename
-              </span>
-
-              <span class="admin-detail-value">
-                ${esc(r.codename) || '—'}
-              </span>
-
-            </div>
-
-
-            <div class="admin-detail">
-
-              <span class="admin-detail-label">
-                Size
-              </span>
-
-              <span class="admin-detail-value">
-                ${esc(r.size) || '—'}
-              </span>
-
-            </div>
-
-
-            <div class="admin-detail">
-
-              <span class="admin-detail-label">
-                Price
-              </span>
-
-              <span class="admin-detail-value">
-                ${money(s.price)}
-              </span>
-
-            </div>
-
-
-            <div class="admin-detail">
-
-              <span class="admin-detail-label">
-                Paid
-              </span>
-
-              <span class="admin-detail-value">
-                ${money(s.paid)}
-              </span>
-
-            </div>
-
-
-            <div class="admin-detail">
-
-              <span class="admin-detail-label">
-                Balance
-              </span>
-
-              <span class="admin-detail-value">
-                ${money(s.balance)}
-              </span>
-
-            </div>
-
-          </div>
-
-
-          <div class="admin-mobile-actions">
-
-            <button
-              class="icon-btn edit"
-              data-edit="${esc(r.id)}"
+            <div
+              class="admin-mobile-card"
             >
-              ✏️ Edit
-            </button>
+
+              <div
+                class="admin-mobile-top"
+              >
+
+                <div
+                  class="admin-mobile-name"
+                >
+                  ${esc(r.name)}
+                </div>
+
+                ${statusBadge(s.status)}
+
+              </div>
 
 
-            <button
-              class="icon-btn delete"
-              data-delete="${esc(r.id)}"
-            >
-              🗑️ Delete
-            </button>
+              <div
+                class="admin-mobile-details"
+              >
 
-          </div>
+                <div
+                  class="admin-detail"
+                >
 
-        </div>
+                  <span
+                    class="admin-detail-label"
+                  >
+                    Group
+                  </span>
 
-      `;
+                  <span
+                    class="admin-detail-value"
+                  >
+                    ${esc(r.group) || '—'}
+                  </span>
 
-    })
-    .join('');
+                </div>
 
 
-  /* EMPTY ADMIN */
+                <div
+                  class="admin-detail"
+                >
+
+                  <span
+                    class="admin-detail-label"
+                  >
+                    Codename
+                  </span>
+
+                  <span
+                    class="admin-detail-value"
+                  >
+                    ${esc(r.codename) || '—'}
+                  </span>
+
+                </div>
+
+
+                <div
+                  class="admin-detail"
+                >
+
+                  <span
+                    class="admin-detail-label"
+                  >
+                    Size
+                  </span>
+
+                  <span
+                    class="admin-detail-value"
+                  >
+                    ${esc(r.size) || '—'}
+                  </span>
+
+                </div>
+
+
+                <div
+                  class="admin-detail"
+                >
+
+                  <span
+                    class="admin-detail-label"
+                  >
+                    Price
+                  </span>
+
+                  <span
+                    class="admin-detail-value"
+                  >
+                    ${money(s.price)}
+                  </span>
+
+                </div>
+
+
+                <div
+                  class="admin-detail"
+                >
+
+                  <span
+                    class="admin-detail-label"
+                  >
+                    Paid
+                  </span>
+
+                  <span
+                    class="admin-detail-value"
+                  >
+                    ${money(s.paid)}
+                  </span>
+
+                </div>
+
+
+                <div
+                  class="admin-detail"
+                >
+
+                  <span
+                    class="admin-detail-label"
+                  >
+                    Balance
+                  </span>
+
+                  <span
+                    class="admin-detail-value"
+                  >
+                    ${money(s.balance)}
+                  </span>
+
+                </div>
+
+              </div>
+
+
+              <div
+                class="admin-mobile-actions"
+              >
+
+                <button
+                  class="icon-btn edit"
+                  data-edit="${esc(r.id)}"
+                >
+                  ✏️ Edit
+                </button>
+
+
+                <button
+                  class="icon-btn delete"
+                  data-delete="${esc(r.id)}"
+                >
+                  🗑️ Delete
+                </button>
+
+              </div>
+
+            </div>
+
+          `;
+
+        }
+      )
+      .join('');
+
+
+  /* ===================================================
+     ADMIN EMPTY
+  =================================================== */
 
   $('adminEmpty')
     .classList
     .toggle(
       'hidden',
-      records.length > 0
+      adminVisible.length > 0
+    );
+
+}
+
+
+/* =====================================================
+   UPDATE FILTER BUTTONS
+===================================================== */
+
+function updateFilterButtons(){
+
+  document
+    .querySelectorAll(
+      '.public-filter'
+    )
+    .forEach(
+      button => {
+
+        button.classList.toggle(
+          'active',
+          button.dataset.filter ===
+          publicFilter
+        );
+
+      }
+    );
+
+
+  document
+    .querySelectorAll(
+      '.admin-filter'
+    )
+    .forEach(
+      button => {
+
+        button.classList.toggle(
+          'active',
+          button.dataset.filter ===
+          adminFilter
+        );
+
+      }
     );
 
 }
@@ -2046,12 +2771,15 @@ function toast(message){
   $('toast').textContent =
     message;
 
+
   $('toast')
     .classList
     .remove('hidden');
 
 
-  clearTimeout(toastTimer);
+  clearTimeout(
+    toastTimer
+  );
 
 
   toastTimer =
@@ -2067,7 +2795,7 @@ function toast(message){
 
 
 /* =====================================================
-   OPEN RECORD MODAL
+   OPEN RECORD
 ===================================================== */
 
 function openRecord(record){
@@ -2076,10 +2804,11 @@ function openRecord(record){
     record?.id || null;
 
 
-  $('recordTitle').textContent =
-    record
-      ? 'Edit payment record'
-      : 'Add payment record';
+  $('recordTitle')
+    .textContent =
+      record
+        ? 'Edit payment record'
+        : 'Add payment record';
 
 
   $('recordName').value =
@@ -2162,8 +2891,6 @@ async function saveRecord(){
     );
 
 
-  /* VALIDATION */
-
   if(!name){
 
     toast(
@@ -2217,10 +2944,15 @@ async function saveRecord(){
   const data = {
 
     name,
+
     group,
+
     codename,
+
     size,
+
     price,
+
     paid,
 
     updatedAt:
@@ -2231,6 +2963,18 @@ async function saveRecord(){
   };
 
 
+  const saveButton =
+    $('saveRecord');
+
+
+  saveButton.disabled =
+    true;
+
+
+  saveButton.textContent =
+    'Saving...';
+
+
   try{
 
     if(editingId){
@@ -2239,11 +2983,6 @@ async function saveRecord(){
         .collection('tshirtPayments')
         .doc(editingId)
         .update(data);
-
-
-      $('recordModal')
-        .classList
-        .add('hidden');
 
 
       toast(
@@ -2267,11 +3006,6 @@ async function saveRecord(){
         });
 
 
-      $('recordModal')
-        .classList
-        .add('hidden');
-
-
       toast(
         'Payment record added.'
       );
@@ -2279,7 +3013,13 @@ async function saveRecord(){
     }
 
 
-    editingId = null;
+    $('recordModal')
+      .classList
+      .add('hidden');
+
+
+    editingId =
+      null;
 
   }
   catch(e){
@@ -2292,19 +3032,29 @@ async function saveRecord(){
     );
 
   }
+  finally{
+
+    saveButton.disabled =
+      false;
+
+    saveButton.textContent =
+      'Save record';
+
+  }
 
 }
 
 
 /* =====================================================
-   DELETE RECORD
+   DELETE
 ===================================================== */
 
 async function deleteRecord(id){
 
   const record =
     records.find(
-      r => r.id === id
+      r =>
+        r.id === id
     );
 
 
@@ -2360,61 +3110,63 @@ async function deleteRecord(id){
 
 
 /* =====================================================
-   FIREBASE AUTH STATE
+   AUTH STATE
 ===================================================== */
 
-auth.onAuthStateChanged(user => {
+auth.onAuthStateChanged(
+  user => {
 
-  if(user){
+    if(user){
 
-    $('role').textContent =
-      'Admin';
-
-
-    $('loginBtn')
-      .classList
-      .add('hidden');
+      $('role').textContent =
+        'Admin';
 
 
-    $('logoutBtn')
-      .classList
-      .remove('hidden');
+      $('loginBtn')
+        .classList
+        .add('hidden');
 
 
-    $('admin-view')
-      .classList
-      .remove('hidden');
+      $('logoutBtn')
+        .classList
+        .remove('hidden');
 
 
-    render();
+      $('admin-view')
+        .classList
+        .remove('hidden');
+
+
+      render();
+
+    }
+    else{
+
+      $('role').textContent =
+        'Public view';
+
+
+      $('loginBtn')
+        .classList
+        .remove('hidden');
+
+
+      $('logoutBtn')
+        .classList
+        .add('hidden');
+
+
+      $('admin-view')
+        .classList
+        .add('hidden');
+
+
+      render();
+
+    }
 
   }
-  else{
-
-    $('role').textContent =
-      'Public view';
-
-
-    $('loginBtn')
-      .classList
-      .remove('hidden');
-
-
-    $('logoutBtn')
-      .classList
-      .add('hidden');
-
-
-    $('admin-view')
-      .classList
-      .add('hidden');
-
-
-    render();
-
-  }
-
-});
+);
 
 
 /* =====================================================
@@ -2423,28 +3175,37 @@ auth.onAuthStateChanged(user => {
 
 db.collection('tshirtPayments')
   .onSnapshot(
+
     snapshot => {
 
       records =
         snapshot.docs
-          .map(doc => ({
+          .map(
+            doc => ({
 
-            id:doc.id,
-            ...doc.data()
+              id:doc.id,
 
-          }))
+              ...doc.data()
+
+            })
+          )
           .sort(
             (a,b) =>
-              String(a.name || '')
-                .localeCompare(
-                  String(b.name || '')
+              String(
+                a.name || ''
+              )
+              .localeCompare(
+                String(
+                  b.name || ''
                 )
+              )
           );
 
 
       render();
 
     },
+
 
     error => {
 
@@ -2459,6 +3220,7 @@ db.collection('tshirtPayments')
       );
 
     }
+
   );
 
 
@@ -2474,7 +3236,67 @@ $('search')
 
 
 /* =====================================================
-   LOGIN BUTTON
+   PUBLIC FILTER BUTTONS
+===================================================== */
+
+document
+  .querySelectorAll(
+    '.public-filter'
+  )
+  .forEach(
+    button => {
+
+      button.addEventListener(
+        'click',
+        () => {
+
+          publicFilter =
+            button.dataset.filter;
+
+
+          updateFilterButtons();
+
+          render();
+
+        }
+      );
+
+    }
+  );
+
+
+/* =====================================================
+   ADMIN FILTER BUTTONS
+===================================================== */
+
+document
+  .querySelectorAll(
+    '.admin-filter'
+  )
+  .forEach(
+    button => {
+
+      button.addEventListener(
+        'click',
+        () => {
+
+          adminFilter =
+            button.dataset.filter;
+
+
+          updateFilterButtons();
+
+          render();
+
+        }
+      );
+
+    }
+  );
+
+
+/* =====================================================
+   LOGIN OPEN
 ===================================================== */
 
 $('loginBtn')
@@ -2487,6 +3309,7 @@ $('loginBtn')
 
       $('loginPassword').value =
         '';
+
 
       $('loginModal')
         .classList
@@ -2551,6 +3374,7 @@ $('loginSubmit')
 
       button.disabled =
         true;
+
 
       button.textContent =
         'Logging in...';
@@ -2635,6 +3459,7 @@ $('loginSubmit')
         button.disabled =
           false;
 
+
         button.textContent =
           'Log in';
 
@@ -2657,12 +3482,15 @@ $('logoutBtn')
 
         await auth.signOut();
 
+
         toast(
           'Logged out.'
         );
 
       }
       catch(e){
+
+        console.error(e);
 
         toast(
           'Could not log out.'
@@ -2675,7 +3503,7 @@ $('logoutBtn')
 
 
 /* =====================================================
-   ADD RECORD
+   ADD
 ===================================================== */
 
 $('addBtn')
@@ -2687,15 +3515,13 @@ $('addBtn')
 
 
 /* =====================================================
-   EDIT / DELETE BUTTONS
-     
-   Event delegation is used because
-   rows are dynamically generated.
+   EDIT / DELETE
 ===================================================== */
 
 document.addEventListener(
   'click',
   event => {
+
 
     const editButton =
       event.target.closest(
@@ -2711,7 +3537,8 @@ document.addEventListener(
 
       const record =
         records.find(
-          r => r.id === id
+          r =>
+            r.id === id
         );
 
 
@@ -2746,55 +3573,63 @@ document.addEventListener(
 
 
 /* =====================================================
-   CLOSE LOGIN MODAL
+   CLOSE LOGIN
 ===================================================== */
 
 document
-  .querySelectorAll('.close-modal')
-  .forEach(button => {
+  .querySelectorAll(
+    '.close-modal'
+  )
+  .forEach(
+    button => {
 
-    button.addEventListener(
-      'click',
-      () => {
+      button.addEventListener(
+        'click',
+        () => {
 
-        $('loginModal')
-          .classList
-          .add('hidden');
+          $('loginModal')
+            .classList
+            .add('hidden');
 
-      }
-    );
+        }
+      );
 
-  });
+    }
+  );
 
 
 /* =====================================================
-   CLOSE RECORD MODAL
+   CLOSE RECORD
 ===================================================== */
 
 document
-  .querySelectorAll('.close-record')
-  .forEach(button => {
+  .querySelectorAll(
+    '.close-record'
+  )
+  .forEach(
+    button => {
 
-    button.addEventListener(
-      'click',
-      () => {
+      button.addEventListener(
+        'click',
+        () => {
 
-        $('recordModal')
-          .classList
-          .add('hidden');
+          $('recordModal')
+            .classList
+            .add('hidden');
 
 
-        editingId =
-          null;
+          editingId =
+            null;
 
-      }
-    );
+        }
+      );
 
-  });
+    }
+  );
 
 
 /* =====================================================
-   SAVE RECORD
+   SAVE
 ===================================================== */
 
 $('saveRecord')
@@ -2805,7 +3640,7 @@ $('saveRecord')
 
 
 /* =====================================================
-   ENTER KEY FOR LOGIN
+   ENTER LOGIN
 ===================================================== */
 
 $('loginPassword')
@@ -2828,7 +3663,7 @@ $('loginPassword')
 
 
 /* =====================================================
-   ENTER KEY IN RECORD FORM
+   ENTER RECORD
 ===================================================== */
 
 [
@@ -2839,32 +3674,34 @@ $('loginPassword')
   'recordPrice',
   'recordPaid'
 ]
-.forEach(id => {
+.forEach(
+  id => {
 
-  $(id)
-    .addEventListener(
-      'keydown',
-      event => {
+    $(id)
+      .addEventListener(
+        'keydown',
+        event => {
 
-        if(
-          event.key ===
-          'Enter'
-        ){
+          if(
+            event.key ===
+            'Enter'
+          ){
 
-          event.preventDefault();
+            event.preventDefault();
 
-          saveRecord();
+            saveRecord();
+
+          }
 
         }
+      );
 
-      }
-    );
-
-});
+  }
+);
 
 
 /* =====================================================
-   CLOSE MODALS WHEN CLICKING BACKDROP
+   BACKDROP CLOSE
 ===================================================== */
 
 $('loginModal')
@@ -2912,7 +3749,7 @@ $('recordModal')
 
 
 /* =====================================================
-   ESC KEY CLOSE MODALS
+   ESC CLOSE
 ===================================================== */
 
 document.addEventListener(
@@ -2944,8 +3781,10 @@ document.addEventListener(
 
 
 /* =====================================================
-   INITIAL RENDER
+   INITIAL
 ===================================================== */
+
+updateFilterButtons();
 
 render();
 
